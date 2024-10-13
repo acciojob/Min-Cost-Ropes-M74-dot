@@ -1,22 +1,22 @@
 function mincost(arr) {
-  arr.sort((a, b) => a - b); // Sort the array in ascending order
-  let totalCost = 0;
+	const minHeap = []
+	arr.forEach(ropeLen=>minHeap.push(ropeLen))
+	minHeap.sort((a,b)=>a-b)
 
-  while (arr.length > 1) {
-    // Remove the two smallest elements
-    let first = arr.shift();
-    let second = arr.shift();
-    
-    // Calculate the cost to connect these two ropes
-    let cost = first + second;
-    totalCost += cost;
-    
-    // Insert the new rope back into the array and sort again
-    arr.push(cost);
-    arr.sort((a, b) => a - b);
-  }
-  
-  return totalCost;
+	let totalCost=0;
+
+	while(minHeap.length > 1){
+		let firstRope = minHeap.shift()
+		let secondRope = minHeap.shift()
+
+		let currCost = firstRope + secondRope
+
+		totalCost+=currCost
+
+		minHeap.push(currCost)
+		minHeap.sort((a,b)=>a-b)
+	}
+	return totalCost
 }
 
 function calculateMinCost() {
