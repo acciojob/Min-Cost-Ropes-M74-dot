@@ -21,9 +21,13 @@ function mincost(arr) {
 	return totalCost
 }
 
-function calculateMinCost() {
-  const input = document.getElementById('ropeInput').value;
-  const arr = input.split(',').map(Number);
-  const result = mincost(arr);
-  document.getElementById('result').textContent = `Minimum cost to connect ropes: ${result}`;
-}
+// function calculateMinCost() {
+//   const input = document.getElementById('ropeInput').value;
+//   const arr = input.split(',').map(Number);
+//   const result = mincost(arr);
+//   document.getElementById('result').textContent = `Minimum cost to connect ropes: ${result}`;
+// }
+
+console.log(mincost([4, 3, 2, 6]))
+console.log(mincost([1, 2, 3, 4, 5]))
+module.exports = mincost;
