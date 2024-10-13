@@ -1,4 +1,6 @@
 function mincost(arr) {
+
+	if(arr.length==1)return arr[0];
 	const minHeap = []
 	arr.forEach(ropeLen=>minHeap.push(ropeLen))
 	minHeap.sort((a,b)=>a-b)
